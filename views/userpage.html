@@ -3,7 +3,7 @@
 {% block pagetype %}userpage{% endblock %}
 
 {% block enlargeThumbJS %}
-<script src="/assets/js/enlarge_thumb.js"></script>
+<script src="assets/js/enlarge_thumb.js"></script>
 {% endblock %}
 
 {% block title %}
@@ -17,7 +17,7 @@
 <meta property="og:description" name="description" content="{{ u.true_score }} Rep · Joined {{ u.created_date }} · {% if u.stored_subscriber_count >=1 and not u.is_private and not u.is_nofollow %}{{ u.stored_subscriber_count }} Subscribers · {% endif %}{% if not u.is_private %}{{ u.post_count }} Posts · {{ u.comment_count }} Comments · {% endif %}{{u.bio}}" />
 <meta property="og:author" name="author" content="@{{ u.username }}" />
 <meta property="og:title" content="{{ u.username }}" />
-<meta property="og:image" content="{% if u.has_banner %}{{ u.banner_url }}{% else %}{{ '/assets/images/preview-images/ruqqus_og_image.png' | full_link }}{% endif %}" />
+<meta property="og:image" content="{% if u.has_banner %}{{ u.banner_url }}{% else %}{{ 'assets/images/preview-images/ruqqus_og_image.png' | full_link }}{% endif %}" />
 <meta property="og:url" content="{{ u.permalink | full_link}}" />
 <meta property="og:site_name" content="ruqqus.com" />
 
@@ -26,7 +26,7 @@
 <meta name="twitter:title" content="{{ u.username }}'s profile - Ruqqus" />
 <meta name="twitter:creator" content="@{{ u.username }}">
 <meta name="twitter:description" content="{{ u.true_score }} Rep · Joined {{ u.created_date }} ·{% if u.stored_subscriber_count >=1 and not u.is_private and not u.is_nofollow %}{{ u.stored_subscriber_count }} Subscribers ·{% endif %} {% if not u.is_private %} {{ u.post_count }} Posts · {{ u.comment_count }} Comments ·{% endif %} {{u.bio}}" />
-<meta name="twitter:image" content="{% if u.has_banner %}{{ u.banner_url }}{% else %}{{ '/assets/images/preview-images/ruqqus_og_image.png' | full_link }}{% endif %}" />
+<meta name="twitter:image" content="{% if u.has_banner %}{{ u.banner_url }}{% else %}{{ 'assets/images/preview-images/ruqqus_og_image.png' | full_link }}{% endif %}" />
 <meta name="twitter:url" content="{{ u.permalink | full_link}}" />
 {% endblock %}
 
@@ -249,10 +249,10 @@
     <div class="flex-row box-shadow-bottom d-flex justify-content-center justify-content-md-between align-items-center">
       <ul class="nav settings-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Posts</a>
+          <a class="nav-link active" href="index.html">Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/comments.html">Comments</a>
+          <a class="nav-link" href="comments.html">Comments</a>
         </li>    
       </ul>
     </div>

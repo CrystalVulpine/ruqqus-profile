@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<script src="/assets/js/nunjucks.min.js"></script>
-<script src="/assets/js/jquery-2.0.3.min.js" importance="high" ></script>
+<script src="assets/js/nunjucks.min.js"></script>
+<script src="assets/js/jquery-2.0.3.min.js" importance="high" ></script>
 <script>
 	var urlParams;
 	(window.onpopstate = function () {
@@ -12,13 +12,13 @@
 	var darkMode = false;
 	var sidebarCollapsed = false;
 
-	var env = new nunjucks.Environment(new nunjucks.WebLoader('/views'));
+	var env = new nunjucks.Environment(new nunjucks.WebLoader('views'));
 
 	env.addFilter('full_link', function(link) {
-		return '/' + link;
+		return link;
 	});
 	
-	var CrystalVulpine = { permalink: '/', id: 0, username: 'CrystalVulpine', profile_url: 'profile.png', banner_url: 'banner.png', stored_subscriber_count: 43, created_date: '27 May 2020', true_score: 19571, bio_html: '<p>I\'m a total failure and kinda annoying but I want to be your friend :3</p>', created_datetime: '27 May 2020 at 21:44:12', original_username: 'CrystalVulpine' };
+	var CrystalVulpine = { permalink: 'index.html', id: 0, username: 'CrystalVulpine', profile_url: 'profile.png', banner_url: 'banner.png', stored_subscriber_count: 43, created_date: '27 May 2020', true_score: 19571, bio_html: '<p>I\'m a total failure and kinda annoying but I want to be your friend :3</p>', created_datetime: '27 May 2020 at 21:44:12', original_username: 'CrystalVulpine' };
 
 	var page = parseInt(urlParams["page"]) || 1;
 	
@@ -55,6 +55,6 @@
 		}
 	});
 </script>
-<script src="/assets/js/bootstrap.js" importance="high" defer="defer" ></script>
+<script src="assets/js/bootstrap.js" importance="high" defer="defer" ></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" importance="high" defer="defer"></script>
-<script src="/assets/js/all_js.js?v=2.38.0" importance="high" defer="defer" ></script>
+<script src="assets/js/all_js.js?v=2.38.0" importance="high" defer="defer" ></script>

@@ -1,0 +1,86 @@
+<div class="col sidebar sidebar-left hide-scrollbar bg-white border-right d-none d-lg-block pt-3{% if sidebarCollapsed %} sidebar-collapsed{%endif %}" id="sidebar-left" style="overflow-y: auto; height: calc(100vh - 49px);">
+
+  <div class="sidebar-section sidebar-trending" style="word-break: break-word">
+    <div class="body p-0">
+
+      <div class="mb-4">
+        <div class="sidebar-collapsed-hidden collapsed-toggle-parent">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-small font-weight-bold text-muted text-uppercase" style="letter-spacing: 0.025rem;">Ruqqus Feeds</div>
+            <button class="btn" data-toggle="tooltip" data-placement="right" title="Collapse" onclick="toggle_sidebar_collapse();post('/settings/toggle_collapse');"><span class="collapsed-toggle"></span></button>
+          </div>
+        </div>
+        <div class="sidebar-collapsed-visible collapsed-toggle-parent">
+          <button class="btn mb-3" onclick="toggle_sidebar_expand();post('/settings/toggle_collapse');"><span class="collapsed-toggle"></span></button>
+        </div>
+        <div class="sidebar-collapsed-visible">
+          <span class="fa-stack">
+            <i class="fas fa-newspaper text-muted mb-3" style="font-size: 1rem;"></i>
+          </span>
+        </div>
+        <ul class="no-bullets guild-recommendations-list pl-0 sidebar-collapsed-hidden">
+          <li class="guild-recommendations-item">
+            <a href="/">
+              <div class="d-flex">
+                <span class="fa-stack">
+                  <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                  <i class="fa-stack-1x fas fa-home fa-inverse d-inline-block text-white"></i>
+                </span>
+                <span class="my-auto ml-2 text-black font-weight-normal">Home</span>
+              </div>
+              </a>
+            </li>
+            <li class="guild-recommendations-item">
+              <a href="/all?sort=new">
+                <div class="d-flex">
+                  <span class="fa-stack">
+                    <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                    <i class="fa-stack-1x fas fa-globe-americas fa-inverse d-inline-block text-white"></i>
+                  </span>
+                  <span class="my-auto ml-2 text-black font-weight-normal">All</span>
+                </div>
+              </a>
+            </li>
+            <li class="guild-recommendations-item">
+              <a href="/all?sort=hot">
+                <div class="d-flex">
+                  <span class="fa-stack">
+                    <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                    <i class="fa-stack-1x fas fa-fire fa-inverse d-inline-block text-white"></i>
+                  </span>
+                  <span class="my-auto ml-2 text-black font-weight-normal">Trending</span>
+                </div>
+              </a>
+              </li>
+            </ul>
+              <!-- Show this list when sidebar is collapsed-->
+              <ul class="no-bullets guild-recommendations-list pl-0 sidebar-collapsed-visible">
+                <li class="guild-recommendations-item">
+                  <a href="/">
+                    <span class="fa-stack">
+                      <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                      <i class="fa-stack-1x fas fa-home fa-inverse d-inline-block text-white"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="guild-recommendations-item">
+                  <a href="/all?sort=new">
+                    <span class="fa-stack">
+                      <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                      <i class="fa-stack-1x fas fa-globe-americas fa-inverse d-inline-block text-white"></i>
+                  </span>
+                  </a>
+                </li>
+                <li class="guild-recommendations-item">
+                  <a href="/all?sort=hot">
+                    <span class="fa-stack">
+                      <i class="fa-2x fas fa-circle text-purple fa-stack-2x" style=""></i>
+                      <i class="fa-stack-1x fas fa-fire fa-inverse d-inline-block text-white"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+         </div>
+      </div>
+      </div>

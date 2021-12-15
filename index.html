@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<script src="/assets/js/nunjucks.min.js"></script>
+<script src="/assets/js/jquery-2.0.3.min.js" importance="high" ></script>
+<script>
+	var urlParams;
+	(window.onpopstate = function () {
+		var match, pl = /\+/g, search = /([^&=]+)=?([^&]*)/g, decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); }, query  = window.location.search.substring(1);
+		urlParams = {};
+		while (match = search.exec(query))
+			urlParams[decode(match[1])] = decode(match[2]);
+	})();
+	var darkMode = false;
+	var sidebarCollapsed = false;
+
+	var env = new nunjucks.Environment(new nunjucks.WebLoader('/views'));
+
+	env.addFilter('full_link', function(link) {
+		return '/' + link;
+	});
+	
+	var CrystalVulpine = { permalink: '/', id: 0, username: 'CrystalVulpine', profile_url: 'profile.png', banner_url: 'banner.png', stored_subscriber_count: 43, created_date: '27 May 2020', true_score: 19571, bio_html: '<p>I\'m a total failure and kinda annoying but I want to be your friend :3</p>', created_datetime: '27 May 2020 at 21:44:12', original_username: 'CrystalVulpine' };
+
+	var page = parseInt(urlParams["page"]) || 1;
+	
+	$.ajax({
+		url: "listing/posts/myposts" + (page - 1) + ".json",
+		dataType: "text",
+		success: function(response) {
+			var listing = [];
+			var posts = response.split("\n");
+			for (poststr of posts) {
+				if (poststr == '') {
+					break;
+				}
+				let post = JSON.parse(poststr);
+				if (post.author_name == 'CrystalVulpine') {
+					post.author = CrystalVulpine;
+				}
+				if (post.url && (post.url.endsWith('.png') || post.url.endsWith('.jpg') || post.url.endsWith('.jpeg') || post.url.endsWith('.gif') || post.url.endsWith('.webm'))) {
+					post.is_image = true;
+					post.thumb_url = post.url;
+				}
+				listing.push(post);
+			}
+			$.ajax({
+				url: "listing/posts/myposts" + (page) + ".json",
+				dataType: "text",
+				success: function(response) {
+					document.documentElement.innerHTML = env.render('userpage.html', { u: CrystalVulpine, darkMode: darkMode, sidebarCollapsed: sidebarCollapsed, listing: listing, request_path: window.location.pathname, userpage: true, page: page, next_exists: true } );
+				},
+				error: function (jqXHR, exception) {
+					document.documentElement.innerHTML = env.render('userpage.html', { u: CrystalVulpine, darkMode: darkMode, sidebarCollapsed: sidebarCollapsed, listing: listing, request_path: window.location.pathname, userpage: true, page: page, next_exists: false } );
+				}
+			});
+		}
+	});
+</script>
+<script src="/assets/js/bootstrap.js" importance="high" defer="defer" ></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" importance="high" defer="defer"></script>
+<script src="/assets/js/all_js.js?v=2.38.0" importance="high" defer="defer" ></script>

@@ -28,6 +28,7 @@
     {% if listing %}
     <div class="posts p-3 p-md-0">
      {% set comments=listing %}
+     {% set userpage=True %}
      {% include "comments.html" %}
    </div>
    {% else %}

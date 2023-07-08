@@ -69,7 +69,7 @@
 {% set adjust=0 %}
 {% endif %}
 
-{% if standalone and level==1 %}
+{% if userpage or (standalone and level==1) %}
 <div class="post-info mt-5 mb-1">
   <span class="align-top">
   {% if c.post %}

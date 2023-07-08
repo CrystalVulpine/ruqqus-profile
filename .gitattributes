@@ -2,7 +2,7 @@
 *.css text linguist-language=CSS
 *.js text linguist-language=JavaScript
 *.html text linguist-language=HTML
-*.json text linguist-generated
+*.json text linguist-language=JSON linguist-generated=true
 *.sh text linguist-language=Shell
-*.md text linguist-language=Markdown linguist-documentation
-assets/* linguist-vendored
+*.md text linguist-language=Markdown linguist-documentation=true
+assets/* linguist-vendored=true

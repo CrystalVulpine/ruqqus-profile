@@ -1,6 +1,8 @@
-*.py text
-*.css text
-*.js text
-*.html text
-*.txt text
-
+*.py text linguist-language=Python
+*.css text linguist-language=CSS
+*.js text linguist-language=JavaScript
+*.html text linguist-language=HTML
+*.json text linguist-generated
+*.sh text linguist-language=Shell
+*.md text linguist-language=Markdown linguist-documentation
+assets/* linguist-vendored
